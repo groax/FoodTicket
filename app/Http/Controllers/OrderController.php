@@ -30,6 +30,6 @@ class OrderController extends Controller
         $result = Auth::user()->orders()->with('articles')->findOrFail($order->id);
         return response()->json($result, 200);
     }
-    
+
     // Hier zou het artikel verwijderen moeten komen.
 }
