@@ -12,7 +12,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $view = view('articles.index');
+        $view->articles = Article::all()->toArray();
+
+        return $view;
     }
 
     /**
