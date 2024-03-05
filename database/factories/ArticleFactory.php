@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
             'name' => fake()->word('en', 'nl'),
             'description' => fake()->text(),
             'price' => fake()->randomFloat(2, 1, 30),
-            'image' => Storage::disk('public')->putFile('articles', fake()->image()),
+            'image' => Storage::disk('public')->putFile('storage/articles', fake()->image()),
         ];
     }
 }

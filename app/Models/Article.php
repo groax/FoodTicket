@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\ImageURL;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,6 +20,7 @@ class Article extends Model
 
     protected $casts = [
         'price' => 'float',
+        'image' => ImageURL::class,
     ];
 
     public function order()

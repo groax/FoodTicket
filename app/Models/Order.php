@@ -13,11 +13,13 @@ class Order extends Model
     protected $fillable = [
         'address',
         'total_price',
+        'is_ready_to_order',
         'is_paid',
         'is_delivered',
     ];
 
     protected $casts = [
+        'is_ready_to_order' => 'boolean',
         'is_paid' => 'boolean',
         'is_delivered' => 'boolean',
         'total_price' => 'float',

@@ -20,6 +20,7 @@ class OrderFactory extends Factory
         return [
             'user_id' => User::whereNot('is_admin', true)->inRandomOrder()->first()->id,
             'address' => fake()->address(),
+            'is_ready_to_order' => fake()->boolean(),
             'is_paid' => fake()->boolean(),
             'is_delivered' => fake()->boolean(),
         ];

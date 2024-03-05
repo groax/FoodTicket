@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id()->from(1000);
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->string('address')->nullable();
+            $table->boolean('is_ready_to_order')->default(false);
             $table->boolean('is_paid')->default(false);
             $table->boolean('is_delivered')->default(false);
             $table->double('total_price')->default('0.00');

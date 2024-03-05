@@ -57,6 +57,9 @@ class Order extends Resource
             BelongsTo::make(__('Klant'), 'user', User::class)->searchable()->nullable(),
             Textarea::make(__('Adres'), 'address')->rows(3)->hideFromIndex(),
             Currency::make(__('Totaal'), 'total_price')->readonly(),
+            Boolean::make(__('In afwachting'), 'is_ready_to_order')
+                ->help('In afwachting tot klant klaar is om te bestellen')
+                ->default(false),
             Boolean::make(__('Betaald'), 'is_paid'),
             Boolean::make(__('Geleverd'), 'is_delivered'),
             DateTime::make(__('Besteld op'), 'created_at')->sortable()->readonly(),
